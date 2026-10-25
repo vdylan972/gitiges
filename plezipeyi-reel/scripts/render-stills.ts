@@ -9,8 +9,8 @@ import { controlStills } from '../src/config/film.config';
 const run = (args: string[]) => execFileSync('npx', ['remotion', ...args], { stdio: 'inherit' });
 
 mkdirSync('out/stills/safezones', { recursive: true });
-controlStills.forEach((frame, i) => {
-  const name = `scene${i + 1}-f${String(frame).padStart(3, '0')}.png`;
+controlStills.forEach(({ frame, name: scene }) => {
+  const name = `f${String(frame).padStart(3, '0')}-${scene}.png`;
   run(['still', 'PleziPeyiReel', `out/stills/${name}`, `--frame=${frame}`]);
   run(['still', 'PleziPeyiReel', `out/stills/safezones/${name}`, `--frame=${frame}`, '--props={"showSafeZones":true}']);
 });

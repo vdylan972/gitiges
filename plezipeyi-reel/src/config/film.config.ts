@@ -502,4 +502,11 @@ export const options = {
 };
 
 // Stills de contrôle (une frame par scène).
-export const controlStills = [45, 165, 330, 470, 610, 735];
+export const controlStills = [
+  { frame: 45, name: 'scene1' },
+  { frame: 165, name: 'scene2' },
+  { frame: 330, name: 'scene3' },
+  { frame: 470, name: 'scene4a-envoi' },
+  { frame: 610, name: 'scene4b-arrivee' },
+  { frame: 735, name: 'scene5' },
+];
