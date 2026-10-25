@@ -4,14 +4,14 @@ import { bodyFont } from '../lib/fonts';
 
 /**
  * Remplace un asset manquant : fond gris foncé, nom et description du plan.
- * Le texte est placé dans le tiers bas (zones de sécurité respectées) pour ne
+ * Le texte est placé en haut de la zone utile (sous les 250 px réservés) pour ne
  * pas se superposer aux textes du film.
  */
 export const Placeholder: React.FC<{
   label: string;
   description?: string;
   src?: string;
-  /** 'lower' : tiers bas (plans plein cadre) ; 'center' : centré (éléments plus petits). */
+  /** 'lower' : haut de la zone utile (plans plein cadre) ; 'center' : centré (éléments plus petits). */
   position?: 'lower' | 'center';
   scale?: number;
 }> = ({ label, description, src, position = 'lower', scale = 1 }) => {
@@ -21,7 +21,7 @@ export const Placeholder: React.FC<{
         backgroundColor: '#2A2A2A',
         justifyContent: position === 'lower' ? 'flex-start' : 'center',
         alignItems: 'center',
-        paddingTop: position === 'lower' ? 1180 : 0,
+        paddingTop: position === 'lower' ? 400 : 0,
         paddingLeft: 90 * scale,
         paddingRight: 90 * scale,
         fontFamily: bodyFont(),

@@ -165,7 +165,7 @@ export const layout = {
   textY: {
     s1: 860, // légèrement au-dessus du milieu (960)
     s2: 860,
-    s3: 880,
+    s3: 1330, // sous les visages (F3 = portraits)
     s5Line1: 1110,
     s5Line2: 1185,
   },
@@ -276,8 +276,9 @@ export const shots: ShotConfig[] = [
   f2(5, 'Silhouette qui marche seule, de dos'),
 
   // SCÈNE 3 — Certaines personnes ne sont jamais vraiment loin (fondus de 8 frames)
-  f3(1, 'Une mère regarde son téléphone et sourit légèrement'),
-  f3(2, 'Une grand-mère chez elle, lumière naturelle de fin de journée'),
+  { ...f3(1, 'Une mère regarde son téléphone et sourit légèrement', 0.5, 0.3), inPoint: 1 },
+  // Rush horizontal (4096 × 2160) : recadré sur le téléphone.
+  { ...f3(2, 'Une grand-mère chez elle, lumière naturelle de fin de journée', 0.58, 0.5), inPoint: 2.5 },
   f3(3, 'Un frère et une sœur, ou un couple, dans un moment complice'),
   f3(4, 'Un enfant qui fête son anniversaire (bougies, rires)'),
 
@@ -421,7 +422,7 @@ export const thread = {
   glow: 6,
   f1: { bandTop: 1240, bandBottom: 1480, fragmentsPerCut: 3, opacity: 0.7, drawFrames: 4 },
   f2: { y: 1360, sag: 70, drawFrom: 100, drawTo: 226, fadeOutFrom: 230, fadeOutTo: 246, opacity: 0.75 },
-  f3: { y: 1420, amplitude: 90, before: 14, after: 18, opacity: 0.75 },
+  f3: { y: 1560, amplitude: 70, before: 14, after: 18, opacity: 0.75 },
   f4: {
     // Sortie par le haut depuis le bouton de validation.
     exitFrom: 497,
@@ -487,7 +488,7 @@ export const cover = {
   frameInShot: 22,
   /** Étalonnage : position dans la scène F3 (0 = début froid, 1 = fin chaude). */
   gradeProgress: 0.7,
-  textY: 880,
+  textY: 1330,
 };
 
 // ---------------------------------------------------------------------------
