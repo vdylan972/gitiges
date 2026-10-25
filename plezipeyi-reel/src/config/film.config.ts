@@ -261,11 +261,11 @@ const f3 = (n: number, description: string, focalX = 0.5, focalY = 0.4): ShotCon
 
 export const shots: ShotConfig[] = [
   // SCÈNE 1 — La vie va vite (cuts secs de 15 frames)
-  f1(1, 'Caddie poussé dans un supermarché'),
-  f1(2, 'Machine à laver qui tourne (hublot)'),
+  f1(1, 'Caddie poussé dans un supermarché'), // rush horizontal 1280 × 720, 4 premières secondes
+  f1(2, 'Machine à laver qui tourne (hublot)', 0.52, 0.5), // rush horizontal 1280 × 720
   f1(3, 'Cuisine en vitesse (mains, poêle)'),
   f1(4, 'Mains sur un téléphone ou un clavier'),
-  f1(5, 'Clés attrapées sur un meuble, sac à l’épaule'),
+  f1(5, 'Clés attrapées sur un meuble, sac à l’épaule'), // rush horizontal, coupé au moment où la main saisit les clés
   f1(6, 'Portique ou quai de métro'),
 
   // SCÈNE 2 — La vie vous emmène loin (fondus de 6 frames, ralenti 0.8)
